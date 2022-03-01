@@ -1,0 +1,44 @@
+@media screen and (max-width: 950px) {
+    .searchForm__conteiner {
+      width: 385px;
+    }
+    }
+
+@media screen and (max-width: 650px) {
+    .searchForm__conteiner {
+        width: 285px;
+    }
+    }
+
+.conteiner {
+    width: calc(20px+(50-20)*((100vw-320px)/(1200-320)));
+}
+
+.logo {
+    margin-bottom: 0px;
+    margin-top: 16px;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.header {
+    background-color: black;
+    border: none;
+    height: auto;
+}
+
+.navigation__link {
+    height: 56px;
+    border: none;
+    margin-bottom: -;
+    padding-bottom: 22px;
+    padding-left: 16px;
+}
+
+.navigation__button {
+    width: 288px;
+    padding-left: 16px;
+}

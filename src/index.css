@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+@import url(./components/App/App.css);
+@import url(./components/Header/Header.css);
+@import url(./components/Logo/Logo.css);
+@import url(./components/Navigation/Navigation.css);
+@import url(./components/App/App.css);
+@import url(./components/SearchForm/SearchForm.css);
+@import url(./components/NewsCardList/NewsCardList.css);
+@import url(./components/NewsCard/NewsCard.css);
+@import url(./components/NewsCardListBtn/NewsCardListBtn.css);
+@import url(./components/News/News.css);
+@import url(./components/Footer/Footer.css);
+@import url(./components/FooterLinks/FooterLinks.css);
+@import url(./components/FooterCopyright/FooterCopyright.css);
+@import url(./components/FooterNav/FooterNav.css);
+@import url(./components/FooterSocial/FooterSocial.css);
+@import url(./components/PopupWithForm/PopupWithForm.css);
+@import url(./components/SignInPopup/SignInPopup.css);
+@import url(./components/SignUpPopup/SignUpPopup.css);
+@import url(./components/SignupSuccess/SignupSuccess.css);
+@import url(./components/SavedNewsHeader/SavedNewsHeader.css);
+@import url(./components/NavBtn/NavBtn.css);
