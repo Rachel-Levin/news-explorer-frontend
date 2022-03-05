@@ -5,7 +5,9 @@ import Main from '../Main/Main';
 function Home(props) {
     return (
         <div className='home'>
-            <SearchForm />
+            <SearchForm 
+                onSearchSubmit={props.onSearchSubmit}
+            />
             <Main 
                 isHover={props.isHover}
                 onNewsCardBtnHover={props.onNewsCardBtnHover}

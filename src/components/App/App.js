@@ -61,6 +61,11 @@ function App() {
   function handleNavClose(e) {
     setIsNavMobileOpen(false);
   }
+
+  function handleSearchSubmit(e) {
+    e.preventDefault(e);
+    
+  }
   
   function closeAllPopups() {
     setIsSignInPopupOpen(false);
@@ -85,6 +90,7 @@ function App() {
             isHover={isNewsCardBtnHover}
             onNewsCardBtnHover={handleNewsCardBtnHover}
             onNewsCardBtnClose={closeAllPopups}
+            onSearchSubmit={handleSearchSubmit}
           />} />
           {/* <Route  path='/'>
             <Home />
