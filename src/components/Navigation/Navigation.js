@@ -8,7 +8,7 @@ function Navigation(props) {
 
   return (
     <nav className=
-    {`navigation
+      {`navigation
     ${props.isNavOpen ? 'navigation__mobile' : ''}
     `}
     >
@@ -19,6 +19,7 @@ function Navigation(props) {
           }
           ${props.isNavOpen ? 'navigation__link_mobile' : ''}
           `}
+        onClick={props.onNavClose}
       >Home</Link>
       <Link to='/saved-articles'
         className={`${location.pathname === "/"
@@ -27,6 +28,7 @@ function Navigation(props) {
           }
           ${props.isNavOpen ? 'navigation__link_mobile' : ''}
           `}
+        onClick={props.onNavClose}
       >Saved articles</Link>
       <button
         className={`${location.pathname === "/"

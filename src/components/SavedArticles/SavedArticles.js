@@ -4,7 +4,7 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 
 function SavedArticles(props) {
     return (
-        <div className='savedArticles'>
+        <div className='saved-articles'>
             <SavedNewsHeader />
             <NewsCardList
                 isHover={props.isHover}

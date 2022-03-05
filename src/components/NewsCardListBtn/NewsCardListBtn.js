@@ -3,7 +3,7 @@ import './NewsCardListBtn.css';
 function NewsCardListBtn() {
 
     return (
-        <button className='newsCardListBtn'>Show more</button>
+        <button className='newscard-list__btn'>Show more</button>
     );
 };
 

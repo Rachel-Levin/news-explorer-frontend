@@ -9,7 +9,7 @@
   }
 
 .navigation__link {
-    font-family: Roboto;
+    font-family: Roboto, Source Sans Pro;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -45,7 +45,7 @@
   }
 
   .navigation__button {
-    font-family: Roboto;
+    font-family: Roboto, Source Sans Pro;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -57,6 +57,7 @@
     background: none;
     width: 176px;
     height: 48px;
+    cursor: pointer;
   }
 
   .navigation__home {
@@ -68,16 +69,15 @@
     border-color: black;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 740px) {
     .navigation__link {
       font-size: 16px;
     }
-    }
 
-  @media screen and (max-width: 650px) {
     .navigation {
       display: none;
     }
+
     }
 
   @media screen and (max-width: 950px) {
@@ -94,13 +94,14 @@
   padding-top: 16px;
   padding-bottom: 22px;
   padding-left: 16px;
+  height: auto;
+  width: 100%;
 }
 
 .navigation__link_mobile {
   color: white;
   height: 56px;
   border: none;
-  padding-bottom: 22px;
   width: auto;
 }
 
@@ -109,4 +110,5 @@
   width: 288px;
   padding-left: 16px;
   border-color: white;
+  margin-top: 22px;
 }

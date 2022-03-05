@@ -16,8 +16,16 @@
     padding-top: 30px;
 }
 
+@media screen and (max-width: 950px) {
 
-@media screen and (max-width: 770px) {
+    .footer__conteiner {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+}  
+
+@media screen and (max-width: 740px) {
 
     .footer {
         display: flex;
@@ -29,6 +37,8 @@
         width: 288px;
         display: flex;
         flex-direction: column-reverse;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 
     } 

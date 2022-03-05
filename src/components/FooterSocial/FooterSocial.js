@@ -5,12 +5,12 @@ import fb from '../../images/fb.svg';
 function FooterSocial() {
 
     return (
-        <div className='footerSocial'>
-            <a>
-                <img className='footerSocialIcon' src={ gh } alt='github'></img>
+        <div className='footer__social'>
+            <a href="https://github.com/Rachel-Levin" target="_blank">
+                <img className='footer__social_icon' src={gh} alt='github'></img>
             </a>
-            <a>                 
-                <img className='footerSocialIcon' src={ fb } alt='facebook'></img>
+            <a href="https://www.facebook.com/kate.levine.98/" target="_blank">
+                <img className='footer__social_icon' src={fb} alt='facebook'></img>
             </a>
         </div>
     );

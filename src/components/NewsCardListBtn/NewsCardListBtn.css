@@ -1,4 +1,4 @@
-/* .newsCardListBtn {
+/* .newscard-list__btn {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -16,14 +16,14 @@
     margin-left: 50%;
 } */
 
-.newsCardListBtn {
+.newscard-list__btn {
     width: 288px;
     height: 64px;
     border-radius: 80px;
     border-color: transparent;
     color: #1a1b22;
     background-color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, Source Sans Pro;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -35,14 +35,14 @@
     transform: translate(-50%, 0);
   }
   
-  .newsCardListBtn:hover {
+  .newscard-list__btn:hover {
     background-color: #e8e8e8;
     cursor: pointer;
   }
 
   @media screen and (max-width: 950px) {
 
-    .newsCardListBtn {
+    .newscard-list__btn {
       margin-top: 32px;
       margin-bottom: 0px;
       width: 240px;
@@ -50,9 +50,9 @@
 
     }  
 
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 740px) {
 
-    .newsCardListBtn {
+    .newscard-list__btn {
       margin-top: 21px;
       width: 288px;
     }

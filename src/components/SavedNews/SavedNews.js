@@ -4,7 +4,7 @@ import NewsCard from '../NewsCard/NewsCard';
 
 function SavedNews(props) {
     return (
-        <div className='savedNews'>
+        <div className='saved-news'>
             <NewsCard
                 isHover={props.isHover}
                 onNewsCardBtnHover={props.onNewsCardBtnHover}

@@ -51,3 +51,27 @@
     src:  url("./roboto-slab-700.woff") format("woff"),
           url("./roboto-slab-700.woff2") format("woff2");
 }
+
+@font-face {
+      font-family: 'Inter';
+      font-style:  normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('./Inter-Regular.ttf') format('ttf'),           
+    }
+    
+    @font-face {
+      font-family: 'Inter';
+      font-style:  normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('./Inter-Medium.ttf') format('ttf'),
+    }
+
+    @font-face {
+      font-family: "Source Sans Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src:  url("./Microsoft Sans Serif Regular font.ttf") format("ttf"),
+  }

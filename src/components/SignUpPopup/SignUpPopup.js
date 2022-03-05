@@ -42,7 +42,7 @@ function SignUpPopup(props) {
             <input id="email-input" type="email" value={email} onChange={handleAddEmail} className="form__input form__input-email" placeholder="Enter email" name="email" autoComplete="off" required />
             <span className='input__error' id="email-input-error">Invalid email address</span>
             <label className='input__label'>Password</label>
-            <input id="password-input" type="text" value={password} onChange={handleAddPassword} className="form__input form__input-password" placeholder="Enter password" name="password" autoComplete="off" required />
+            <input id="password-input" type="password" value={password} onChange={handleAddPassword} className="form__input form__input-password" placeholder="Enter password" name="password" autoComplete="off" required />
             <span className='input__error' id="password-input-error">Password is required</span>
             <label className='input__label'>Username</label>
             <input id="username-input" type="text" value={username} onChange={handleAddUsername} className="form__input form__input-username" placeholder="Enter your username" name="username" autoComplete="off" required />

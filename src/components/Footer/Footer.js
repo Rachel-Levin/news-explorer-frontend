@@ -5,12 +5,12 @@ import FooterNav from '../FooterNav/FooterNav';
 function Footer() {
 
     return (
-        <div className='footer'>
+        <section className='footer'>
             <div className='footer__conteiner'>
                 <FooterCopyright />
                 <FooterNav />
             </div>
-        </div>
+        </section>
     );
 };
 

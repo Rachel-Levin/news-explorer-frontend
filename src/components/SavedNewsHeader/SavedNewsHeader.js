@@ -4,19 +4,19 @@ import './SavedNewsHeader.css';
 
 function SavedNewsHeader() {
     return (
-        <div className='savedNewsHeader'>
-            <div className='savedNewsHeader__title'>
+        <div className='saved-news-header'>
+            <h3 className='saved-news-header__title'>
             Saved articles
-            </div>
-            <h2 className='savedNewsHeader__counter'>
+            </h3>
+            <h2 className='saved-news-header__counter'>
             Elise, you have 5 saved articles
             </h2>
-            <div className='by__keywords'>
+            <section className='saved-news-header__by-keywords'>
             By keywords: 
-            </div>
-            <div className='keywords'>
+            </section>
+            <section className='saved-news-header__keywords'>
             Nature, Yellowstone, and 2 other
-            </div>
+            </section>
         </div>
     );
 };

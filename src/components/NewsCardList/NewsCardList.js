@@ -10,9 +10,9 @@ function NewsCardList(props) {
         <div className={`${
             location.pathname === "/"
               ? ""
-              : "newsCardList__save"
+              : "newscard-list__save"
           }`}>
-            <ul className="newsCardList">
+            <ul className="newscard-list">
                 <NewsCard 
                     isHover = {props.isHover}
                     onNewsCardBtnHover = {props.onNewsCardBtnHover}

@@ -7,13 +7,13 @@ function NavBtn(props) {
 
     return (
         <button 
-        // className={`navBtn navBtn__dark ${isNavOpen ? 'navBtn__close' : ''}`}
+        // className={`nav-btn nav-btn__dark ${isNavOpen ? 'nav-btn__close' : ''}`}
         className={`${
             location.pathname === "/"
-              ? "navBtn navBtn__light"
-              : "navBtn navBtn__dark"
+              ? "nav-btn nav-btn__light"
+              : "nav-btn nav-btn__dark"
           }
-          ${isNavOpen ? 'navBtn__close' : ''}
+          ${isNavOpen ? 'nav-btn__close' : ''}
           `}
           onClick={props.onOpenNavClick}
         //   onClick={props.onSignInClick}

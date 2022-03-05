@@ -24,6 +24,7 @@ function App() {
     setIsSignInPopupOpen(true);
     setIsSignUpPopupOpen(false);
     setSignupSuccessOpen(false);
+    setIsNavMobileOpen(false);
   }
 
   function handleSignUpClick() {
@@ -56,6 +57,11 @@ function App() {
     // e.preventDefault();
     setIsNavMobileOpen(!isNavMobileOpen);
   }
+
+  function handleNavClose(e) {
+    setIsNavMobileOpen(false);
+  }
+  
   function closeAllPopups() {
     setIsSignInPopupOpen(false);
     setIsSignUpPopupOpen(false);
@@ -71,6 +77,8 @@ function App() {
           onSignInClick={handleSignInClick}
           onOpenNavClick={handleOpenNavClick}
           isNavOpen={isNavMobileOpen}
+          onNavClose={handleNavClose}
+
         />
         <Routes>
           <Route path='/' element={<Home
