@@ -7,7 +7,7 @@ function NewsCardList(props) {
 
     const location = useLocation();
     return (
-        <div className={`${
+        <section className={`${
             location.pathname === "/"
               ? ""
               : "newscard-list__save"
@@ -29,7 +29,7 @@ function NewsCardList(props) {
                     onNewsCardBtnClose={props.onNewsCardBtnClose}
             />
             </ul>
-        </div>    
+        </section>    
     );
 };
 

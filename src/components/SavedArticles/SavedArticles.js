@@ -4,14 +4,14 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 
 function SavedArticles(props) {
     return (
-        <div className='saved-articles'>
+        <main className='saved-articles'>
             <SavedNewsHeader />
             <NewsCardList
                 isHover={props.isHover}
                 onNewsCardBtnHover={props.onNewsCardBtnHover}
                 onNewsCardBtnClose={props.onNewsCardBtnClose}
             />
-        </div>
+        </main>
     );
 };
 

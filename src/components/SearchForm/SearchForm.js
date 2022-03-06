@@ -5,19 +5,19 @@ function SearchForm(props) {
 
     const onSearchSubmit = props;
 
-    const [keyword, setKeyword] = React.useState('');
+    // const [keyword, setKeyword] = React.useState('');
 
-    const handleChange = (event) => {
-        setKeyword(event.target.value);
-    };
+    // const handleChange = (event) => {
+    //     setKeyword(event.target.value);
+    // };
 
-    const handleSearchClick = (keyword) => {
-        // e.preventDefault();
-        onSearchSubmit(keyword);
+    const handleSearchClick = (e) => {
+        e.preventDefault();
+        props.onSearchSubmit(props.keyword);
     }
     //---РАЗМЕТКА JSX---
     return (
-        <div className='search-form'>
+        <section className='search-form'>
             <div className='search-form__conteiner'>
                 <h1 className='search-form__title'>What's going on in the world?</h1>
                 <h2 className='search-form__text'>Find the latest news on any topic and save them in your personal account.</h2>
@@ -27,15 +27,15 @@ function SearchForm(props) {
                     onSubmit={handleSearchClick}
                 >
                     <input className='search-form__input' type="text"
-                        value={keyword}
-                        onChange={handleChange}
+                        value={props.keyword}
+                        onChange={props.handleChange}
                     />
                     <button className='search-form__btn' type="submit"
-                        disabled={!keyword}
+                        disabled={!props.keyword}
                     >Search</button>
                 </form>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -31,6 +31,8 @@
     font-size: 18px;
     line-height: 24px;
     color: #1A1B22;    
+    display: inline;
+    margin: 0;
 }
 
 .saved-news-header__keywords {
@@ -40,18 +42,25 @@
     font-size: 18px;
     line-height: 24px;
     color: #1A1B22;  
+    display: inline;
+    margin: 0;
 }
 
 @media screen and (max-width: 950px) {
 
     .saved-news-header {
-        margin-top: 24px;
-        margin-bottom: 32px;
+        margin: 24px 40px 32px 40px;
+    }
+
+    .saved-news-header__title {
+        font-size: 16px;
     }
 
     .saved-news-header__counter {
         margin-top: 16px;
         margin-bottom: 16px;
+        font-size: 30px;
+        line-height: 34px;
     }
     }  
 
@@ -59,6 +68,8 @@
 
     .saved-news-header {
         margin-top: 8px;
+        margin: 8px 16px 32px 16px;
+
     }
 
     .saved-news-header__counter {

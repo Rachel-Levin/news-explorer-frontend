@@ -57,7 +57,8 @@
       font-style:  normal;
       font-weight: 400;
       font-display: swap;
-      src: url('./Inter-Regular.ttf') format('ttf'),           
+      src: url('./Inter-Regular.woff') format('woff'), 
+           url("./Inter-Regular.woff2") format("woff2");          
     }
     
     @font-face {
@@ -65,7 +66,8 @@
       font-style:  normal;
       font-weight: 500;
       font-display: swap;
-      src: url('./Inter-Medium.ttf') format('ttf'),
+      src: url('./Inter-Medium.woff') format('woff'),
+           url("./Inter-Medium.woff2") format("woff2");          
     }
 
     @font-face {
@@ -73,5 +75,6 @@
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src:  url("./Microsoft Sans Serif Regular font.ttf") format("ttf"),
+      src: url('./MicrosoftSansSerif.woff') format('woff'),
+           url("./MicrosoftSansSerif.woff2") format("woff2");          
   }

@@ -38,6 +38,14 @@
     position: absolute;
 }
 
+@media screen and (max-width: 950px) {
+
+  .header {
+    height: 66px;
+    }
+
+  } 
+
 @media screen and (max-width: 740px) {
 
   .header {

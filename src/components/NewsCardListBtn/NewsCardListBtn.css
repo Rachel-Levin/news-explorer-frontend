@@ -33,6 +33,7 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
+    margin: 64px;
   }
   
   .newscard-list__btn:hover {
@@ -53,8 +54,10 @@
   @media screen and (max-width: 740px) {
 
     .newscard-list__btn {
-      margin-top: 21px;
+      margin-top: 16px;
       width: 288px;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     }

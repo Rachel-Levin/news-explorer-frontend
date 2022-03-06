@@ -5,7 +5,7 @@ import FooterSocial from '../FooterSocial/FooterSocial';
 function FooterNav() {
 
     return (
-        <div className='footerNav'>
+        <div className='footer-nav'>
             <FooterLinks />
             <FooterSocial />
         </div>

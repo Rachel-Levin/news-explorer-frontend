@@ -3,9 +3,9 @@ import './FooterCopyright.css';
 function FooterCopyright() {
 
     return (
-        <section className='footerCopyright'>
-            <p className='footerCopyright__text'>© 2022 Supersite, Powered by Rachel Levin </p>
-        </section>
+        <span className='footer-copyright'>
+            <p className='footer-copyright__text'>© 2022 Supersite, Powered by Rachel Levin </p>
+        </span>
     );
 };
 

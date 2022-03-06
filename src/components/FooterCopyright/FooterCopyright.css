@@ -1,4 +1,4 @@
-.footerCopyright {
+.footer-copyright {
     font-family: Roboto, Source Sans Pro;
     font-style: normal;
     font-weight: normal;
@@ -7,13 +7,13 @@
     color: #B6BCBF;
 }
 
-.footerCopyright__text {
+.footer-copyright__text {
     margin: 0;
 }
 
 @media screen and (max-width: 950px) {
 
-    .footerCopyright {
+    .footer-copyright {
         font-family: Roboto, Source Sans Pro;
         font-style: normal;
         font-weight: normal;
@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 740px) {
 
-    .footerCopyright {
+    .footer-copyright {
         font-size: 15px;
         border-bottom-width: 10px;
         margin-bottom: 22px;

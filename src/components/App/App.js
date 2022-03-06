@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer.js';
 import SignInPopup from '../SignInPopup/SignInPopup';
 import SignUpPopup from '../SignUpPopup/SignUpPopup';
 import SignupSuccess from '../SignupSuccess/SignupSuccess';
+import newsApi from '../../utils/NewsApi';
 
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
   const [isSignupSuccessOpen, setSignupSuccessOpen] = React.useState(false);
   const [isNewsCardBtnHover, setNewsCardBtnHover] = React.useState(false);
   const [isNavMobileOpen, setIsNavMobileOpen] = React.useState(false);
+  const [keyword, setKeyword] = React.useState('');
 
   //handlers
   function handleSignInClick() {
@@ -62,11 +64,23 @@ function App() {
     setIsNavMobileOpen(false);
   }
 
-  function handleSearchSubmit(e) {
-    e.preventDefault(e);
-    
+  function handleSearchSubmit(keyword, e) {
+    // e.preventDefault();
+    setKeyword(keyword);
+    newsApi
+      .getInitialNews(keyword)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
-  
+
+  function handleKeywordChange(event) {
+    setKeyword(event.target.value);
+  };
+
   function closeAllPopups() {
     setIsSignInPopupOpen(false);
     setIsSignUpPopupOpen(false);
@@ -91,6 +105,8 @@ function App() {
             onNewsCardBtnHover={handleNewsCardBtnHover}
             onNewsCardBtnClose={closeAllPopups}
             onSearchSubmit={handleSearchSubmit}
+            keyword={keyword}
+            handleChange={handleKeywordChange}
           />} />
           {/* <Route  path='/'>
             <Home />
