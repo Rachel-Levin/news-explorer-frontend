@@ -21,3 +21,7 @@
 @import url(./components/SignupSuccess/SignupSuccess.css);
 @import url(./components/SavedNewsHeader/SavedNewsHeader.css);
 @import url(./components/NavBtn/NavBtn.css);
+@import url(./components/Loader/Loader.css);
+@import url(./components/NothingFound/NothingFound.css);
+@import url(./components/SavedNewsCards/SavedNewsCards.css);
+

@@ -41,6 +41,10 @@
     cursor: pointer;
   }
 
+  .newscard-list__btn-disabled {
+    color: black;
+  }
+
   @media screen and (max-width: 950px) {
 
     .newscard-list__btn {

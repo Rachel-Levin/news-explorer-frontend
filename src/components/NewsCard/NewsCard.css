@@ -84,6 +84,11 @@
     margin-top: 0px;
     margin-bottom: 16px;
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .news-card__text {

@@ -8,6 +8,8 @@ import SignInPopup from '../SignInPopup/SignInPopup';
 import SignUpPopup from '../SignUpPopup/SignUpPopup';
 import SignupSuccess from '../SignupSuccess/SignupSuccess';
 import newsApi from '../../utils/NewsApi';
+// import * as mainApi from '../../utils/MainApi';
+import mainApi from '../../utils/MainApi';
 
 import './App.css';
 
@@ -20,6 +22,12 @@ function App() {
   const [isNewsCardBtnHover, setNewsCardBtnHover] = React.useState(false);
   const [isNavMobileOpen, setIsNavMobileOpen] = React.useState(false);
   const [keyword, setKeyword] = React.useState('');
+  // const [cards, setCards] = React.useState(JSON.parse(localStorage.getItem("cards") || "[]"));
+  const [cards, setCards] = React.useState([]);
+  const [isArticlesOpen, setIsArticlesOpen] = React.useState(false);
+  const [isLoaderOpen, setIsLoaderOpen] = React.useState(false);
+  const [isNothingFoundOpen, setIsNothingFoundOpen] = React.useState(false);
+  const [isErrMessageOpen, setIsErrMessageOpen] = React.useState(false);
 
   //handlers
   function handleSignInClick() {
@@ -67,14 +75,30 @@ function App() {
   function handleSearchSubmit(keyword, e) {
     // e.preventDefault();
     setKeyword(keyword);
+    setIsLoaderOpen(true);
+    setIsArticlesOpen(true);
+
     newsApi
       .getInitialNews(keyword)
-      .then((res) => {
-        console.log(res);
-      })
+      .then((cards) => {
+        if (cards.articles.length > 0) {
+          setCards(cards.articles);
+          localStorage.setItem("cards", JSON.stringify(cards));
+          setIsLoaderOpen(false);
+        } else {
+          setIsLoaderOpen(false);
+          setIsNothingFoundOpen(true);
+        }
+      }
+      )
       .catch((err) => {
-        console.log(err);
+        setIsErrMessageOpen(true);
       });
+  }
+
+  function handleAddArticle() {
+    // mainApi
+    //   .addArticle
   }
 
   function handleKeywordChange(event) {
@@ -88,6 +112,16 @@ function App() {
     setNewsCardBtnHover(false);
     // setIsNavMobileOpen(false);
   }
+
+  React.useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === "Escape") {
+        closeAllPopups();
+      }
+    };
+    document.addEventListener("keydown", closeByEscape);
+    return () => document.removeEventListener("keydown", closeByEscape);
+  }, []);
 
   return (
     <div className='app'>
@@ -107,6 +141,12 @@ function App() {
             onSearchSubmit={handleSearchSubmit}
             keyword={keyword}
             handleChange={handleKeywordChange}
+            cards={cards}
+            isArticlesOpen={isArticlesOpen}
+            isLoaderOpen={isLoaderOpen}
+            isNothingFoundOpen={isNothingFoundOpen}
+            isErrMessageOpen={isErrMessageOpen}
+            addArticle={handleAddArticle}
           />} />
           {/* <Route  path='/'>
             <Home />

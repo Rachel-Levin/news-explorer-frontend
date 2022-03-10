@@ -5,15 +5,21 @@ import Main from '../Main/Main';
 function Home(props) {
     return (
         <main className='home'>
-            <SearchForm 
+            <SearchForm
                 onSearchSubmit={props.onSearchSubmit}
                 keyword={props.keyword}
                 handleChange={props.handleChange}
             />
-            <Main 
+            <Main
+                cards={props.cards}
                 isHover={props.isHover}
                 onNewsCardBtnHover={props.onNewsCardBtnHover}
                 onNewsCardBtnClose={props.onNewsCardBtnClose}
+                isArticlesOpen={props.isArticlesOpen}
+                isLoaderOpen={props.isLoaderOpen}
+                isNothingFoundOpen={props.isNothingFoundOpen}
+                isErrMessageOpen={props.isErrMessageOpen}
+                addArticle={props.addArticle}
             />
         </main>
     );
