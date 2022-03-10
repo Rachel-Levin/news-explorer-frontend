@@ -1,6 +1,7 @@
 class MainApi {
     constructor({ baseUrl }) {
       this._baseUrl = baseUrl;
+      this.customCheck = this.customCheck.bind(this);
     }
   
     customCheck (res) {
@@ -18,7 +19,7 @@ class MainApi {
 //         "Content-Type": "application/json",
 //         Authorization: `Bearer ${token}`,
 //       },
-//     }).then((res) => customCheck(res));
+//     }).then((res) => this.customCheck(res));
 //   };
   
     addArticle = (data, keyword) => {
@@ -37,7 +38,7 @@ class MainApi {
         url: data.url,
         urlToImage: data.urlToImage,
       }),
-    }).then((res) => customCheck(res));
+    }).then((res) => this.customCheck(res));
   };
 }
 
