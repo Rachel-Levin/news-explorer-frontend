@@ -29,9 +29,13 @@ function NewsCard(props) {
         return `${month}  ${day}, ${year}`;
       }
 
+      function handleSaveCardClick() {
+        props.addArticle(props.card);
+      }
+
     return (
         <li className="news-card">
-            <button onClick={props.addArticle}
+            <button onClick={handleSaveCardClick}
                 className={`${location.pathname === "/"
                 ? "news-card__save-btn news-card__save-btn-home"
                 : "news-card__save-btn news-card__save-btn-trash"

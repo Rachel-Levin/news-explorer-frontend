@@ -22,28 +22,31 @@ class MainApi {
 //     }).then((res) => this.customCheck(res));
 //   };
   
-    addArticle = (data, keyword) => {
+    addArticle = (card, keyword) => {
     return fetch(`${this._baseUrl}/articles`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${token}`,
+        // "Authorization": `Bearer ${token}`,
+        "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmM2FkOTFmNDgyNzMwNDU1MGQ4OTEiLCJpYXQiOjE2NDcyNjI0ODksImV4cCI6MTY0Nzg2NzI4OX0.IAHXwkO9KWWRrR7lL883KTvG5ER8eP-Tn_3Q8VFJtsU`,
       },
       body: JSON.stringify({
         keyword: keyword,
-        title: data.title,
-        description: data.description,
-        publishedAt: data.publishedAt,
-        source: data.source.name,
-        url: data.url,
-        urlToImage: data.urlToImage,
-      }),
+        title: card.title,
+        text: card.description,
+        date: card.publishedAt,
+        source: card.source.name,
+        link: card.url,
+        image: card.urlToImage,
+    }),
     }).then((res) => this.customCheck(res));
   };
 }
 
 const mainApi = new MainApi({
-    baseUrl: "http://localhost:3000/",
+    // baseUrl: "https://news.students.nomoreparties.sbs/api",
+    baseUrl: "http://localhost:3013",
+    // baseUrl: "https://news.students.nomoreparties.sbs",
   });
   
 export default mainApi;

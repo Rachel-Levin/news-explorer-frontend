@@ -24,6 +24,8 @@ function App() {
   const [keyword, setKeyword] = React.useState('');
   // const [cards, setCards] = React.useState(JSON.parse(localStorage.getItem("cards") || "[]"));
   const [cards, setCards] = React.useState([]);
+  const [keyWord, setKeyWord] = React.useState("");
+  const [savedArticles, setSavedArticles] = React.useState([]);
   const [isArticlesOpen, setIsArticlesOpen] = React.useState(false);
   const [isLoaderOpen, setIsLoaderOpen] = React.useState(false);
   const [isNothingFoundOpen, setIsNothingFoundOpen] = React.useState(false);
@@ -75,6 +77,7 @@ function App() {
   function handleSearchSubmit(keyword, e) {
     // e.preventDefault();
     setKeyword(keyword);
+    localStorage.setItem("keyword", keyword);
     setIsLoaderOpen(true);
     setIsArticlesOpen(true);
 
@@ -96,9 +99,39 @@ function App() {
       });
   }
 
-  function handleAddArticle() {
-    // mainApi
-    //   .addArticle
+  // function handleAddArticle(card) {
+  //   mainApi.addArticle(card, keyWord)
+  //         .then((newCard) => {
+  //           setSavedNews([...savedNews, newCard.data]);
+  //           setCards((state) =>
+  //             state.map((c) =>
+  //               c.title === card.title ? { ...c, saved: "true" } : c,
+  //             ),
+  //           );
+  //         })
+  //         .catch((err) => console.log(err));
+  //     }
+  //   } else {
+  //     setIsLoginPopupOpen(true);
+  //   }
+  // }
+  function handleAddArticle(card) {
+    // if (loggedIn) {
+
+        mainApi.addArticle(card, keyWord)
+          .then((newArticle) => {
+            setSavedArticles([...savedArticles, newArticle.data]);
+            setCards((state) =>
+              state.map((c) =>
+                c.title === card.title ? { ...c, saved: "true" } : c,
+              ),
+            );
+          })
+          .catch((err) => console.log(err));
+      
+    // } else {
+    //   setIsLoginPopupOpen(true);
+    // }
   }
 
   function handleKeywordChange(event) {
@@ -121,6 +154,12 @@ function App() {
     };
     document.addEventListener("keydown", closeByEscape);
     return () => document.removeEventListener("keydown", closeByEscape);
+  }, []);
+
+  React.useEffect(() => {
+    if (localStorage.getItem("keyword")) {
+      setKeyWord(localStorage.getItem("keyword"));
+    }
   }, []);
 
   return (
