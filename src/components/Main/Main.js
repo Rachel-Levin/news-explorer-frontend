@@ -16,6 +16,7 @@ function Main(props) {
                 isNothingFoundOpen={props.isNothingFoundOpen}
                 isErrMessageOpen={props.isErrMessageOpen}
                 addArticle={props.addArticle}
+                handleSaveCardClick={props.handleSaveCardClick}
             />
             <About />
         </div>

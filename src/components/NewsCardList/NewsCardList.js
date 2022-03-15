@@ -31,6 +31,7 @@ function NewsCardList(props) {
                         onNewsCardBtnHover={props.onNewsCardBtnHover}
                         onNewsCardBtnClose={props.onNewsCardBtnClose}
                         addArticle={props.addArticle}
+                        handleSaveCardClick={props.handleSaveCardClick}
                     />))}
 
                 {/* <NewsCard 

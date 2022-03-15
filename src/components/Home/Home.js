@@ -20,6 +20,7 @@ function Home(props) {
                 isNothingFoundOpen={props.isNothingFoundOpen}
                 isErrMessageOpen={props.isErrMessageOpen}
                 addArticle={props.addArticle}
+                handleSaveCardClick={props.handleSaveCardClick}
             />
         </main>
     );

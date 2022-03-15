@@ -15,6 +15,7 @@ function News({
     isNothingFoundOpen,
     isErrMessageOpen,
     addArticle,
+    handleSaveCardClick,
 }) { 
 
     return (
@@ -28,6 +29,7 @@ function News({
                         onNewsCardBtnHover={onNewsCardBtnHover}
                         onNewsCardBtnClose={onNewsCardBtnClose}
                         addArticle={addArticle}
+                        handleSaveCardClick={handleSaveCardClick}
                     />
                 </>
             )}

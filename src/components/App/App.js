@@ -14,7 +14,7 @@ import mainApi from '../../utils/MainApi';
 import './App.css';
 
 function App() {
-
+//  const history = useHistory();
   //useStates
   const [isSignInPopupOpen, setIsSignInPopupOpen] = React.useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = React.useState(false);
@@ -84,7 +84,23 @@ function App() {
     newsApi
       .getInitialNews(keyword)
       .then((cards) => {
+
         if (cards.articles.length > 0) {
+          
+          mainApi.getAllArticles('')
+          .then((res) => {
+            res.forEach(article => {
+              cards.articles.forEach(cardTmp => {
+                if(article.title == cardTmp.title) {
+                  cardTmp.saved = true;
+                  article.saved = true;
+                  cardTmp._id = article._id;
+                }
+              });
+            });
+            setSavedArticles(res);
+          })
+          
           setCards(cards.articles);
           localStorage.setItem("cards", JSON.stringify(cards));
           setIsLoaderOpen(false);
@@ -99,6 +115,19 @@ function App() {
       });
   }
 
+  function deleteArticle(card) {
+    console.log(card);
+    mainApi.deleteArticle(card._id)
+      .then(() => {
+        setSavedArticles((state) => state.filter((c) => c._id !== card._id));
+        setCards((state) =>
+          state.map((c) =>
+            c.title === card.title ? { ...c, saved: "false" } : c,
+          ),
+        );
+      })
+      .catch((err) => console.log(err));
+  }
   // function handleAddArticle(card) {
   //   mainApi.addArticle(card, keyWord)
   //         .then((newCard) => {
@@ -120,18 +149,48 @@ function App() {
 
         mainApi.addArticle(card, keyWord)
           .then((newArticle) => {
-            setSavedArticles([...savedArticles, newArticle.data]);
-            setCards((state) =>
-              state.map((c) =>
-                c.title === card.title ? { ...c, saved: "true" } : c,
-              ),
-            );
+            // setSavedArticles([...savedArticles, newArticle.card]);
+            // setCards((state) =>
+            //   state.map((c) =>
+            //     c.title === card.title ? { ...c, saved: "true" } : c,
+            //   ),
+            // );
+            card.saved = true;
+            card._id = newArticle._id;
           })
           .catch((err) => console.log(err));
       
     // } else {
     //   setIsLoginPopupOpen(true);
     // }
+  }
+
+  function handleSavedArticlesClick() {
+    setIsNavMobileOpen(false);
+    getSavedArticles();
+  }
+
+  function handleSaveCardClick(card) {
+    if (card.saved) {
+       deleteArticle(card);
+    } else {
+      handleAddArticle(card);
+    }
+}
+
+  function getSavedArticles() {
+    mainApi.getAllArticles('')
+      .then((res) => {
+        res.forEach(article => {
+            article.saved = true;
+        });
+        setSavedArticles(res);
+        // setLoggedInSavedNews(true);
+        // setHomeActive(false);
+        closeAllPopups();
+        // history.push("/saved-news");
+      })
+      .catch((err) => console.log(err));
   }
 
   function handleKeywordChange(event) {
@@ -169,7 +228,7 @@ function App() {
           onSignInClick={handleSignInClick}
           onOpenNavClick={handleOpenNavClick}
           isNavOpen={isNavMobileOpen}
-          onNavClose={handleNavClose}
+          onNavClose={handleSavedArticlesClick}
 
         />
         <Routes>
@@ -186,6 +245,7 @@ function App() {
             isNothingFoundOpen={isNothingFoundOpen}
             isErrMessageOpen={isErrMessageOpen}
             addArticle={handleAddArticle}
+            handleSaveCardClick={handleSaveCardClick}
           />} />
           {/* <Route  path='/'>
             <Home />
@@ -194,6 +254,8 @@ function App() {
             isHover={isNewsCardBtnHover}
             onNewsCardBtnHover={handleNewsCardBtnHover}
             onNewsCardBtnClose={closeAllPopups}
+            cards={savedArticles}
+            handleSaveCardClick={handleSaveCardClick}
           />}>
             {/* <SavedArticles /> */}
           </Route>

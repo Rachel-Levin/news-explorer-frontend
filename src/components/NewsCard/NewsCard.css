@@ -29,7 +29,7 @@
     background-image: url(../../images/save-hover.svg);
 }
 
-.news-card__save-btn-home:active {
+.news-card__save-btn-home:active, .news-card__saved {
     background-image: url(../../images/save-clicked.svg);
 }
 
