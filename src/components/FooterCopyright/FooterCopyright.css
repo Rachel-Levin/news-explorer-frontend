@@ -1,0 +1,32 @@
+.footer-copyright {
+    font-family: Roboto, Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #B6BCBF;
+}
+
+.footer-copyright__text {
+    margin: 0;
+}
+
+@media screen and (max-width: 950px) {
+
+    .footer-copyright {
+        font-family: Roboto, Source Sans Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;    }
+}  
+
+@media screen and (max-width: 740px) {
+
+    .footer-copyright {
+        font-size: 15px;
+        border-bottom-width: 10px;
+        margin-bottom: 22px;
+        margin-top: 38px;
+        }
+    }

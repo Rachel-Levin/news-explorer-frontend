@@ -1,0 +1,10 @@
+.footer__social {
+    display: flex;
+    gap: 27px;
+}
+
+.footer__social_icon {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}

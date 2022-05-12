@@ -1,0 +1,35 @@
+.nav-btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-btn__light {
+    background-image: url(../../images/NavBtn.png);
+}
+
+.nav-btn__dark {
+    background-image: url(../../images/NavBtnDark.svg);
+}
+
+.nav-btn__close {
+    background-image: url(../../images/closeNav.svg);
+    position: absolute;
+    right: -0.95%;
+    top: 5.05%;
+    margin-top: 12px;
+}
+
+
+/* .nav-btn-close__dark {
+    background-image: url(../../images/NavBtnDark.svg);
+} */
+
+@media screen and (min-width: 740px) {
+    .nav-btn {
+      display: none;
+    }
+    }
