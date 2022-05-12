@@ -1,5 +1,5 @@
 import './NewsCard.css';
-import newsCard from '../../images/image_08-min.png';
+// import newsCard from '../../images/image_08-min.png';
 import { useLocation } from 'react-router-dom';
 import mainApi from '../../utils/MainApi';
 
@@ -93,7 +93,7 @@ function NewsCard(props) {
             }
             {
                 location.pathname === "/saved-articles" && (
-                    <p className='news-card__keyword'>keyword</p>
+                    <p className='news-card__keyword'>{props.card.keyword}</p>
                 )
             }
             <img className="news-card__image" src={props.card.urlToImage} alt="dog" />

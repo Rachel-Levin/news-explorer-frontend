@@ -12,12 +12,16 @@ function Header(props) {
           />
           <Navigation 
             onSignInClick={props.onSignInClick}
+            onLogOutClick={props.onLogOutClick}
             isNavOpen={props.isNavOpen}
             onNavClose={props.onNavClose}
+            loggedIn={props.loggedIn}
+
           />
           <NavBtn 
           onOpenNavClick={props.onOpenNavClick}
-          onSignInClick={props.onSignInClick}
+          // onSignInClick={props.onSignInClick}
+          // onLogOutClick={props.onLogOutClick}
           isNavOpen={props.isNavOpen}
           />
         </header>

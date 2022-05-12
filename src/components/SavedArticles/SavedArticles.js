@@ -21,13 +21,16 @@ function SavedArticles(props) {
 
     return (
         <main className='saved-articles'>
-            <SavedNewsHeader />
+            <SavedNewsHeader
+                loggedIn={props.loggedIn}
+            />
             {/* <NewsCardList
                 isHover={props.isHover}
                 onNewsCardBtnHover={props.onNewsCardBtnHover}
                 onNewsCardBtnClose={props.onNewsCardBtnClose}
             /> */}
             <SavedNewsCards
+                loggedIn={props.loggedIn}
                 isHover={props.isHover}
                 onNewsCardBtnHover={props.onNewsCardBtnHover}
                 onNewsCardBtnClose={props.onNewsCardBtnClose}

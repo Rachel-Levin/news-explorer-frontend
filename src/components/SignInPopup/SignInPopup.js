@@ -1,6 +1,7 @@
 import React from 'react';
 import './SignInPopup.css';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import { useForm } from "react-hook-form";
 
 function SignInPopup(props) {
 
@@ -15,10 +16,10 @@ function SignInPopup(props) {
         setPassword(e.target.value)
     }
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     props.onSignInSubmit({ email, password })
-    // }
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.onSubmit(email, password);
+    }
 
     React.useEffect(() => {
         setEmail('');
@@ -29,7 +30,7 @@ function SignInPopup(props) {
         <PopupWithForm name="__signIn" title="Sign In" buttonName="Sign In" buttonAltName="Sign Up" type="submit"
             isOpen={props.isOpen}
             onClose={props.onClose}
-            onSubmit={props.onSubmit}
+            onSubmit={handleSubmit}
             onClick={props.onSignUpClick}
         >
             <label className='input__label'>Email</label>

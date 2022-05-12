@@ -20,10 +20,10 @@ function SignUpPopup(props) {
         setUsername(e.target.value)
     }
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     props.onSignInSubmit({ email, password })
-    // }
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.onSubmit(username, email, password)
+    }
 
     React.useEffect(() => {
         setEmail('');
@@ -35,7 +35,7 @@ function SignUpPopup(props) {
         <PopupWithForm name="__signUp" title="Sign Up" buttonAltName="Sign In" buttonName="Sign Up" type="submit"
             isOpen={props.isOpen}
             onClose={props.onClose}
-            onSubmit={props.onSubmit}
+            onSubmit={handleSubmit}
             onClick={props.onSignInClick}
         >
             <label className='input__label'>Email</label>

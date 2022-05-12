@@ -1,10 +1,13 @@
+import React from 'react';
 import './Navigation.css';
 import { Link, useLocation } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Navigation(props) {
 
   const location = useLocation();
   const { onSignInClick } = props;
+  const currentUser = React.useContext(CurrentUserContext);
 
   return (
     <nav className=
@@ -30,14 +33,34 @@ function Navigation(props) {
           `}
         onClick={props.onNavClose}
       >Saved articles</Link>
-      <button
+      {props.loggedIn ? (
+        <button className={`${location.pathname === "/"
+        ? "navigation__button"
+        : "navigation__button navigation__button-dark"
+        }
+      ${props.isNavOpen ? 'navigation__button_mobile' : ''}
+      `} onClick={props.onLogOutClick}>
+          {/* log out */}
+          {currentUser.name}
+        </button>
+      ) : (
+        <button
+          className={`${location.pathname === "/"
+            ? "navigation__button"
+            : "navigation__button navigation__button-dark"
+            }
+          ${props.isNavOpen ? 'navigation__button_mobile' : ''}
+          `}
+          onClick={props.onSignInClick} >{props.loggedIn ? currentUser.name : "Sign in"}</button>
+      )}
+      {/* <button
         className={`${location.pathname === "/"
           ? "navigation__button"
           : "navigation__button navigation__button-dark"
           }
           ${props.isNavOpen ? 'navigation__button_mobile' : ''}
           `}
-        onClick={props.onSignInClick} >Sign In</button>
+        onClick={props.onSignInClick} >{props.loggedIn ? currentUser.name : "Sign in"}</button> */}
     </nav>
     //     <nav class="navigation">
     //     <ul>
