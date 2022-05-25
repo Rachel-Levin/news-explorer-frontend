@@ -1,10 +1,13 @@
+import React from 'react';
 import './Navigation.css';
 import { Link, useLocation } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Navigation(props) {
 
   const location = useLocation();
   const { onSignInClick } = props;
+  const currentUser = React.useContext(CurrentUserContext);
 
   return (
     <nav className=
@@ -21,7 +24,8 @@ function Navigation(props) {
           `}
         onClick={props.onNavClose}
       >Home</Link>
-      <Link to='/saved-articles'
+    
+      {/* <Link to='/saved-articles'
         className={`${location.pathname === "/"
           ? "navigation__link"
           : "navigation__link navigation__link-dark navigation__link-save"
@@ -29,15 +33,55 @@ function Navigation(props) {
           ${props.isNavOpen ? 'navigation__link_mobile' : ''}
           `}
         onClick={props.onNavClose}
-      >Saved articles</Link>
-      <button
+      >Saved articles</Link>  */}
+
+
+{props.loggedIn ? (
+  
+        <Link to='/saved-articles'
+        className={`${location.pathname === "/"
+          ? "navigation__link"
+          : "navigation__link navigation__link-dark navigation__link-save"
+          }
+          ${props.isNavOpen ? 'navigation__link_mobile' : ''}
+          `}
+        onClick={props.onNavClose}
+      >Saved articles</Link> 
+        
+      ) : ( <p></p>
+      
+      )}
+
+
+      {props.loggedIn ? (
+        
+        <button className={`${location.pathname === "/"
+        ? "navigation__button"
+        : "navigation__button navigation__button-dark"
+        }
+      ${props.isNavOpen ? 'navigation__button_mobile' : ''}
+      `} onClick={props.onLogOutClick}>
+          {/* log out */}
+          {currentUser.name}
+        </button> 
+      ) : (
+        <button
+          className={`${location.pathname === "/"
+            ? "navigation__button"
+            : "navigation__button navigation__button-dark"
+            }
+          ${props.isNavOpen ? 'navigation__button_mobile' : ''}
+          `}
+          onClick={props.onSignInClick} >{props.loggedIn ? currentUser.name : "Sign in"}</button>
+      )}
+      {/* <button
         className={`${location.pathname === "/"
           ? "navigation__button"
           : "navigation__button navigation__button-dark"
           }
           ${props.isNavOpen ? 'navigation__button_mobile' : ''}
           `}
-        onClick={props.onSignInClick} >Sign In</button>
+        onClick={props.onSignInClick} >{props.loggedIn ? currentUser.name : "Sign in"}</button> */}
     </nav>
     //     <nav class="navigation">
     //     <ul>

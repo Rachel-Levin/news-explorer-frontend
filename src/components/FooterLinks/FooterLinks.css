@@ -1,4 +1,4 @@
-.footerLink {
+.footer-link {
     font-family: Roboto, Source Sans Pro;
     font-style: normal;
     font-weight: normal;
@@ -11,13 +11,13 @@
     display: flex;
 }
 
-.footerLinks {
+.footer-links {
     display: flex;
 }
 
 @media screen and (max-width: 740px) {
 
-    .footerLinks {
+    .footer-links {
         flex-direction: column;
         align-items: flex-start;
         height: 74px;

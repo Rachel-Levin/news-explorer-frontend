@@ -1,10 +1,10 @@
-import './NewsCardListBtn.css';
+// import './NewsCardListBtn.css';
 
-function NewsCardListBtn() {
+// function NewsCardListBtn() {
 
-    return (
-        <button className='newscard-list__btn'>Show more</button>
-    );
-};
+//     return (
+//         <button className='newscard-list__btn'>Show more</button>
+//     );
+// };
 
-export default NewsCardListBtn;
+// export default NewsCardListBtn;

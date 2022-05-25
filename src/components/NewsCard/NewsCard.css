@@ -29,7 +29,7 @@
     background-image: url(../../images/save-hover.svg);
 }
 
-.news-card__save-btn-home:active {
+.news-card__save-btn-home:active, .news-card__saved {
     background-image: url(../../images/save-clicked.svg);
 }
 
@@ -84,6 +84,11 @@
     margin-top: 0px;
     margin-bottom: 16px;
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .news-card__text {
