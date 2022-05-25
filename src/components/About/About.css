@@ -6,6 +6,10 @@
 
 .about__avatar {
     margin-right: 56px;
+    border-radius: 50%;
+    height: 464px;
+    max-width: 464px;
+    min-width: 464px;
 }
 
 .about__title {
