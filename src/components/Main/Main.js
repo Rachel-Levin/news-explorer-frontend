@@ -17,6 +17,7 @@ function Main(props) {
                 isErrMessageOpen={props.isErrMessageOpen}
                 addArticle={props.addArticle}
                 handleSaveCardClick={props.handleSaveCardClick}
+                openSignInPopup ={props.openSignInPopup}
             />
             <About />
         </div>

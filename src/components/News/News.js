@@ -16,6 +16,7 @@ function News({
     isErrMessageOpen,
     addArticle,
     handleSaveCardClick,
+    openSignInPopup,
 }) { 
 
     return (
@@ -30,6 +31,7 @@ function News({
                         onNewsCardBtnClose={onNewsCardBtnClose}
                         addArticle={addArticle}
                         handleSaveCardClick={handleSaveCardClick}
+                        openSignInPopup ={openSignInPopup}
                     />
                 </>
             )}

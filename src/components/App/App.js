@@ -307,6 +307,7 @@ function App() {
               isErrMessageOpen={isErrMessageOpen}
               addArticle={handleAddArticle}
               handleSaveCardClick={handleSaveCardClick}
+              openSignInPopup ={handleSignInClick}
             />} />
             {/* <Route  path='/'>
             <Home />

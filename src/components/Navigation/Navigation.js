@@ -24,7 +24,8 @@ function Navigation(props) {
           `}
         onClick={props.onNavClose}
       >Home</Link>
-      <Link to='/saved-articles'
+    
+      {/* <Link to='/saved-articles'
         className={`${location.pathname === "/"
           ? "navigation__link"
           : "navigation__link navigation__link-dark navigation__link-save"
@@ -32,8 +33,28 @@ function Navigation(props) {
           ${props.isNavOpen ? 'navigation__link_mobile' : ''}
           `}
         onClick={props.onNavClose}
-      >Saved articles</Link>
+      >Saved articles</Link>  */}
+
+
+{props.loggedIn ? (
+  
+        <Link to='/saved-articles'
+        className={`${location.pathname === "/"
+          ? "navigation__link"
+          : "navigation__link navigation__link-dark navigation__link-save"
+          }
+          ${props.isNavOpen ? 'navigation__link_mobile' : ''}
+          `}
+        onClick={props.onNavClose}
+      >Saved articles</Link> 
+        
+      ) : ( <p></p>
+      
+      )}
+
+
       {props.loggedIn ? (
+        
         <button className={`${location.pathname === "/"
         ? "navigation__button"
         : "navigation__button navigation__button-dark"
@@ -42,7 +63,7 @@ function Navigation(props) {
       `} onClick={props.onLogOutClick}>
           {/* log out */}
           {currentUser.name}
-        </button>
+        </button> 
       ) : (
         <button
           className={`${location.pathname === "/"

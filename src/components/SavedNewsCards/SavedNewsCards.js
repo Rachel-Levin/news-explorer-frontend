@@ -8,6 +8,7 @@ function SavedNewsCards(props) {
         <section className='saved-news-cards'>
             {props.cards.filter(cardItem => cardItem.saved == true).map((cardItem, i) => (
                 <NewsCard
+                    key={i}
                     loggedIn={props.loggedIn}
                     isHover={props.isHover}
                     onNewsCardBtnHover={props.onNewsCardBtnHover}

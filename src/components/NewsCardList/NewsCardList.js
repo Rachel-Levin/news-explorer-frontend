@@ -32,6 +32,7 @@ function NewsCardList(props) {
                         onNewsCardBtnClose={props.onNewsCardBtnClose}
                         addArticle={props.addArticle}
                         handleSaveCardClick={props.handleSaveCardClick}
+                        openSignInPopup ={props.openSignInPopup}
                     />))}
 
                 {/* <NewsCard 
