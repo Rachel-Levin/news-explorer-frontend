@@ -18,6 +18,7 @@ function Main(props) {
                 addArticle={props.addArticle}
                 handleSaveCardClick={props.handleSaveCardClick}
                 openSignInPopup ={props.openSignInPopup}
+                loggedIn = {props.loggedIn}
             />
             <About />
         </div>

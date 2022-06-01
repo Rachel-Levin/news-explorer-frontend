@@ -113,9 +113,9 @@ class MainApi {
 
 const mainApi = new MainApi({
   // baseUrl: "https://news.students.nomoreparties.sbs/api",
-  baseUrl: "http://localhost:3013",
+  // baseUrl: "http://localhost:3013",
   // baseUrl: "https://news.rachel.students.nomoreparties.sbs",
-  // baseUrl: "https://api.news.rachel.students.nomoreparties.sbs",
+  baseUrl: "https://api.news.rachel.students.nomoreparties.sbs",
 });
 
 export default mainApi;

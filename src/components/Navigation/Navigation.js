@@ -62,7 +62,7 @@ function Navigation(props) {
       ${props.isNavOpen ? 'navigation__button_mobile' : ''}
       `} onClick={props.onLogOutClick}>
           {/* log out */}
-          {currentUser.name}
+          {currentUser.name}|log out
         </button> 
       ) : (
         <button

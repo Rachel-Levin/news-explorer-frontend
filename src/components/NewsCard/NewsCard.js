@@ -6,7 +6,7 @@ import mainApi from '../../utils/MainApi';
 function NewsCard(props) {
 
     const location = useLocation();
-    const { isHover } = props;
+    const { isHover, loggedIn } = props;
     const months = [
         "January",
         "February",
@@ -40,18 +40,18 @@ function NewsCard(props) {
     function deleteArticle(card) {
         console.log(card);
         mainApi.deleteArticle(card._id)
-          .then(() => {
-            // setSavedArticles((state) => state.filter((c) => c._id !== card._id));
-            // setCards((state) =>
-            //   state.map((c) =>
-            //     c.title === card.title ? { ...c, saved: "false" } : c,
-            //   ),
-            // );
-            card.saved = false;
-          })
-          .catch((err) => console.log(err));
-      }
-    
+            .then(() => {
+                // setSavedArticles((state) => state.filter((c) => c._id !== card._id));
+                // setCards((state) =>
+                //   state.map((c) =>
+                //     c.title === card.title ? { ...c, saved: "false" } : c,
+                //   ),
+                // );
+                card.saved = false;
+            })
+            .catch((err) => console.log(err));
+    }
+
     function handleSaveCardClick() {
         if (props.card.saved) {
             // TODO remove saved article here
@@ -68,7 +68,7 @@ function NewsCard(props) {
 
     return (
         <li className="news-card">
-            <button onClick={handleSaveCardClick}
+            <button onClick={loggedIn ? (handleSaveCardClick) : (props.openSignInPopup)}
                 className={`${location.pathname === "/"
                     ? "news-card__save-btn news-card__save-btn-home"
                     : "news-card__save-btn news-card__save-btn-trash"
@@ -85,9 +85,14 @@ function NewsCard(props) {
 
             ></button>
             {
-                location.pathname === "/" ? (
+
+                !loggedIn && location.pathname === "/" && (
                     <div className={`${isHover ? 'news-card__popup-save' : 'news-card__popup-hidden'}`}>Sign in to save articles</div>
-                ) : (location.pathname === "/saved-articles" && (
+                )
+
+            }
+            {
+                (loggedIn && location.pathname === "/saved-articles" && (
                     <div className={`${isHover ? 'news-card__popup-save' : 'news-card__popup-hidden'}`}>Remove from saved</div>
                 ))
             }

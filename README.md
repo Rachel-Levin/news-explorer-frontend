@@ -1,4 +1,6 @@
 # news-explorer-frontend
+## **By Rachel Levin**
+
 Front-End part of my final project at Practicum100 program. 
 
 In this project, I've used all the technologies I've learned over the last eight months in the program, including: 
@@ -36,3 +38,9 @@ The will reload when you make changes.
 ### npm run build
 Builds the app for production to the build folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+
+#### 
+ 
+
+You can view activ version of the project in the following link: https://news.rachel.students.nomoreparties.sbs

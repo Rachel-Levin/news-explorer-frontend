@@ -36,6 +36,7 @@ function App() {
   const [token, setToken] = React.useState(localStorage.getItem("jwt"));
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
+  const [isloggedIn, setIsloggedIn] = React.useState(false);
 
   //useEffects
   React.useEffect(() => {
@@ -241,6 +242,7 @@ function App() {
         if (data.token) {
           setToken(data.token);
           setLoggedIn(true);
+          setIsloggedIn(true);
           closeAllPopups();
           // history.push("/");
           resetForm();
@@ -259,8 +261,11 @@ function App() {
     setIsSignInPopupOpen(false);
     setIsSignUpPopupOpen(false);
     setSignupSuccessOpen(false);
-    setNewsCardBtnHover(false);
     // setIsNavMobileOpen(false);
+  }
+
+  function closeCardHoverPopup() {
+    setNewsCardBtnHover(false);
   }
 
   React.useEffect(() => {
@@ -296,7 +301,7 @@ function App() {
             <Route path='/' element={<Home
               isHover={isNewsCardBtnHover}
               onNewsCardBtnHover={handleNewsCardBtnHover}
-              onNewsCardBtnClose={closeAllPopups}
+              onNewsCardBtnClose={closeCardHoverPopup}
               onSearchSubmit={handleSearchSubmit}
               keyword={keyword}
               handleChange={handleKeywordChange}
@@ -308,6 +313,7 @@ function App() {
               addArticle={handleAddArticle}
               handleSaveCardClick={handleSaveCardClick}
               openSignInPopup ={handleSignInClick}
+              loggedIn={isloggedIn}
             />} />
             {/* <Route  path='/'>
             <Home />
@@ -319,7 +325,7 @@ function App() {
                     loggedIn={loggedIn}
                     isHover={isNewsCardBtnHover}
                     onNewsCardBtnHover={handleNewsCardBtnHover}
-                    onNewsCardBtnClose={closeAllPopups}
+                    onNewsCardBtnClose={closeCardHoverPopup}
                     cards={savedArticles}
                     handleSaveCardClick={handleSaveCardClick}
                   />

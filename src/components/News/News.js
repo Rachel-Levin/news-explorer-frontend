@@ -17,6 +17,7 @@ function News({
     addArticle,
     handleSaveCardClick,
     openSignInPopup,
+    loggedIn,
 }) { 
 
     return (
@@ -32,6 +33,7 @@ function News({
                         addArticle={addArticle}
                         handleSaveCardClick={handleSaveCardClick}
                         openSignInPopup ={openSignInPopup}
+                        loggedIn = {loggedIn}
                     />
                 </>
             )}

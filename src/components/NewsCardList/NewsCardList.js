@@ -33,6 +33,7 @@ function NewsCardList(props) {
                         addArticle={props.addArticle}
                         handleSaveCardClick={props.handleSaveCardClick}
                         openSignInPopup ={props.openSignInPopup}
+                        loggedIn ={props.loggedIn}
                     />))}
 
                 {/* <NewsCard 
