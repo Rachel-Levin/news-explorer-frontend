@@ -36,7 +36,7 @@ function App() {
   const [token, setToken] = React.useState(localStorage.getItem("jwt"));
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
-  const [isloggedIn, setIsloggedIn] = React.useState(false);
+  const [isloggedIn, setIsloggedIn] = React.useState(localStorage.getItem("isloggedIn"));
 
   //useEffects
   React.useEffect(() => {
@@ -241,11 +241,12 @@ function App() {
       .then((data) => {
         if (data.token) {
           setToken(data.token);
-          setLoggedIn(true);
-          setIsloggedIn(true);
+          // setLoggedIn(true);
+          setIsloggedIn(localStorage.setItem("isloggedIn", true));
           closeAllPopups();
           // history.push("/");
-          resetForm();
+          // resetForm();
+          document.location.reload(true);
         }
       })
       .catch((err) => console.log(err));
@@ -253,8 +254,9 @@ function App() {
 
   function handleLogOutClick() {
     localStorage.removeItem("jwt");
-    setLoggedIn(false);
+    setIsloggedIn(localStorage.removeItem("isloggedIn"));
     closeAllPopups();
+    document.location.reload(true);
   }
 
   function closeAllPopups() {
